@@ -1,0 +1,24 @@
+{
+  "system": {
+    "name": "CUSTOM JAILBREAK SYSTEM",
+    "version": "1.0",
+    "developer": "SAN-GNT",
+    "description": "Web Jailbreak Generator dengan Login & Module Builder Custom"
+  },
+  "auth": {
+    "default_username": "admin",
+    "default_password": "admin123",
+    "storage": "localStorage"
+  },
+  "features": {
+    "login_system": true,
+    "module_builder": true,
+    "template_system": true,
+    "history_tracking": true,
+    "export_options": true
+  },
+  "ui": {
+    "theme": "dark",
+    "animations": true
+  }
+}
