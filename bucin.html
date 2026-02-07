@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 BUAT KAMU YANG SPESIAL 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bucin-style.css">
+</head>
+<body>
+    <!-- Background Hearts -->
+    <div id="hearts-container"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title"><i class="fas fa-heart"></i> UNTUK KAMU <i class="fas fa-heart"></i></h1>
+            <p class="subtitle">Semua hal indah yang ingin kusampaikan...</p>
+            
+            <!-- Love Meter -->
+            <div class="love-meter">
+                <div class="meter-label">
+                    <span>Kadar Cintaku Padamu:</span>
+                    <span id="lovePercent">100%</span>
+                </div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+                <button id="boostLove" class="small-btn"><i class="fas fa-plus"></i> Boost Love</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Section 1: Love Messages -->
+            <section class="card">
+                <h2><i class="fas fa-comment-heart"></i> PESAN CINTA</h2>
+                <div class="message-box" id="messageBox">
+                    "Kamu adalah alasan senyumku pagi ini..."
+                </div>
+                <div class="button-group">
+                    <button id="newMessage" class="action-btn">
+                        <i class="fas fa-sync"></i> Pesan Baru
+                    </button>
+                    <button id="copyMessage" class="action-btn">
+                        <i class="fas fa-copy"></i> Salin Pesan
+                    </button>
+                    <button id="sendMessage" class="action-btn">
+                        <i class="fas fa-paper-plane"></i> Kirim ke Pacar
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section 2: Love Tools -->
+            <section class="card">
+                <h2><i class="fas fa-magic"></i> ALAT CINTA</h2>
+                <div class="tools-grid">
+                    <button class="tool-btn" data-tool="surat">
+                        <i class="fas fa-envelope"></i>
+                        <span>Buat Surat Cinta</span>
+                    </button>
+                    <button class="tool-btn" data-tool="puisi">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Generate Puisi</span>
+                    </button>
+                    <button class="tool-btn" data-tool="foto">
+                        <i class="fas fa-camera"></i>
+                        <span>Album Foto Virtual</span>
+                    </button>
+                    <button class="tool-btn" data-tool="musik">
+                        <i class="fas fa-music"></i>
+                        <span>Putar Lagu Romantis</span>
+                    </button>
+                    <button class="tool-btn" data-tool="kode">
+                        <i class="fas fa-lock"></i>
+                        <span>Kode Rahasia Cinta</span>
+                    </button>
+                    <button class="tool-btn" data-tool="quiz">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quiz Cinta</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section 3: Countdown -->
+            <section class="card">
+                <h2><i class="fas fa-clock"></i> COUNTDOWN SPESIAL</h2>
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Hari</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Jam</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Menit</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Detik</div>
+                    </div>
+                </div>
+                <div class="countdown-controls">
+                    <input type="date" id="countdownDate" class="date-input">
+                    <button id="setCountdown" class="action-btn">Set Tanggal Spesial</button>
+                    <button id="resetCountdown" class="action-btn secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Section 4: Love Gallery -->
+            <section class="card">
+                <h2><i class="fas fa-images"></i> GALERI KENANGAN</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #ffafbd, #ffc3a0);">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>Pertama Bertemu</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Date Pertama</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <p>Hadiah Spesial</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <p>Liburan Bersama</p>
+                    </div>
+                </div>
+                <button id="addMemory" class="action-btn"><i class="fas fa-plus"></i> Tambah Kenangan</button>
+            </section>
+
+            <!-- Section 5: Secret Love Code -->
+            <section class="card">
+                <h2><i class="fas fa-user-secret"></i> KODE RAHASIA CINTA</h2>
+                <div class="code-container">
+                    <div class="code-input">
+                        <input type="text" id="secretCode" placeholder="Masukkan kode rahasia...">
+                        <button id="decodeBtn" class="small-btn"><i class="fas fa-key"></i> Decode</button>
+                    </div>
+                    <div class="code-output" id="codeOutput">
+                        Masukkan kode "CINTA123" untuk kejutan!
+                    </div>
+                </div>
+                <button id="generateCode" class="action-btn"><i class="fas fa-bolt"></i> Generate Kode Cinta</button>
+            </section>
+
+            <!-- Section 6: Love Music -->
+            <section class="card">
+                <h2><i class="fas fa-headphones"></i> MUSIK ROMANTIS</h2>
+                <div class="music-player">
+                    <div class="music-info">
+                        <div class="music-cover" id="musicCover">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="music-details">
+                            <h3 id="musicTitle">Lagu Cinta</h3>
+                            <p id="musicArtist">Untuk Kamu</p>
+                            <div class="music-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="musicProgress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <button id="prevBtn" class="music-btn"><i class="fas fa-step-backward"></i></button>
+                        <button id="playBtn" class="music-btn play"><i class="fas fa-play"></i></button>
+                        <button id="nextBtn" class="music-btn"><i class="fas fa-step-forward"></i></button>
+                        <button id="volumeBtn" class="music-btn"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="playlist">
+                    <div class="playlist-item active" data-song="1">
+                        <i class="fas fa-heart"></i>
+                        <span>My Love - Untuk Kamu</span>
+                    </div>
+                    <div class="playlist-item" data-song="2">
+                        <i class="fas fa-star"></i>
+                        <span>Bintang - Romeo & Juliet</span>
+                    </div>
+                    <div class="playlist-item" data-song="3">
+                        <i class="fas fa-moon"></i>
+                        <span>Bulan - Soundtrack Cinta</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Surprise Button -->
+            <section class="card surprise-card">
+                <h2><i class="fas fa-gift"></i> KEJUTAN SPESIAL!</h2>
+                <p class="surprise-text">Klik tombol di bawah untuk kejutan yang tak terduga...</p>
+                <button id="surpriseBtn" class="surprise-btn">
+                    <i class="fas fa-gift"></i>
+                    <span>BUKA KEJUTAN</span>
+                    <div class="sparkle"></div>
+                </button>
+                <div class="surprise-result" id="surpriseResult"></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Dibuat dengan <i class="fas fa-heart heartbeat"></i> oleh seseorang yang sangat mencintaimu</p>
+            <p class="footer-note">Refresh halaman untuk pengalaman yang berbeda | Semua button 100% berfungsi!</p>
+            <button id="resetAll" class="footer-btn"><i class="fas fa-redo"></i> Reset Semua</button>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Audio Elements (invisible) -->
+    <audio id="bgMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="soundClick">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="soundSuccess">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Script -->
+    <script src="bucin-script.js"></script>
+</body>
+</html>
